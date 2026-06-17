@@ -441,20 +441,11 @@ button { font-family: inherit; cursor: pointer; }
   padding: 2px 8px; font-size: var(--fs-xs); font-weight: 800;
 }
 
-/* Levertijd strak onder de prijs, als groene pill (terugkerende ronde vorm) */
+/* Levertijd strak onder de prijs, in groen accent */
 .delivery {
   display: flex; align-items: center; gap: 6px;
+  font-size: var(--fs-sm); color: var(--primary-dark); font-weight: 600;
   margin-bottom: 16px;
-}
-.delivery__pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--primary-soft); border: 1px solid var(--primary-line);
-  color: var(--primary-dark); font-weight: 600; font-size: var(--fs-sm);
-  padding: 6px 14px; border-radius: var(--shape-tab);
-}
-.delivery__dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--primary); flex: none;
 }
 .delivery strong { color: var(--primary-dark); font-weight: 700; }
 
@@ -886,7 +877,13 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: var(--radius-xl);
   padding: 32px 36px;
 }
-.advice__media { flex: none; }
+.advice__media {
+  flex: none; display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.advice__name {
+  font-size: var(--fs-sm); font-weight: 700; color: var(--navy);
+  text-align: center; max-width: 130px; line-height: 1.3;
+}
 /* Ronde specialist-foto — terugkerende ronde vorm */
 .advice__photo {
   width: 120px; height: 120px; border-radius: var(--shape-tab-br);
