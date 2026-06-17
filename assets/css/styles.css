@@ -22,6 +22,8 @@
   --primary-line: #b9ecd6;   /* rand bij groene tint */
   --accent: #05C275;         /* KSH groen accent */
   --star: #05C275;           /* groene sterren */
+  --sale: #e02b2b;           /* actieprijs / korting (rood accent) */
+  --sale-soft: #fdeaea;      /* zachte rode tint voor de prijs-badge */
   --radius-sm: 10px;          /* kleine controls: pills, swatches, selects */
   --radius: 12px;             /* standaard */
   --radius-lg: 16px;          /* blokken/kaarten */
@@ -403,17 +405,34 @@ button { font-family: inherit; cursor: pointer; }
 
 /* Prijs in KSH-stijl: groot excl.-bedrag, incl.-bedrag ernaast op één regel */
 .price {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 1px;
-  margin-bottom: 6px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  margin-bottom: 8px;
 }
 .price__row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
 .price__now {
-  color: var(--navy); font-size: 30px; font-weight: 800; line-height: 1.1;
+  color: var(--sale); font-size: 30px; font-weight: 800; line-height: 1.1;
   display: inline-flex; align-items: baseline;
 }
 .price__cents { font-size: 18px; font-weight: 800; }
+.price__was {
+  color: var(--muted); font-size: var(--fs-md); font-weight: 600;
+  text-decoration: line-through; text-decoration-color: var(--muted);
+}
 .price__incl { font-size: var(--fs-sm); color: var(--muted); }
 .price__excl-note { font-size: var(--fs-xs); color: var(--muted); }
+/* Groene besparingsregel onder de prijs */
+.price__save {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: var(--fs-sm); font-weight: 600; color: var(--primary-dark);
+}
+.price__save strong { font-weight: 800; color: var(--primary-dark); }
+.price__save-pct {
+  display: inline-flex; align-items: center;
+  background: var(--primary-soft); color: var(--primary-dark);
+  border: 1px solid var(--primary-line);
+  border-radius: var(--radius-pill);
+  padding: 2px 8px; font-size: var(--fs-xs); font-weight: 800;
+}
 
 /* Levertijd strak onder de prijs, in groen accent */
 .delivery {

@@ -7,6 +7,7 @@
   "use strict";
 
   var BASE_PRICE = 340; // basisprijs in euro's (Elektrisch 'Basic' 120x80, excl. btw)
+  var SALE_PCT = 0.26;  // actiekorting t.o.v. de van-prijs (26%)
 
   var addBtn = document.getElementById("addBtn");
   var addBtnLabel = addBtn ? addBtn.querySelector(".btn-cart__label") : null;
@@ -61,6 +62,16 @@
     // incl. btw bedrag (21%), met 2 decimalen NL-notatie
     var incl = document.getElementById("livePriceIncl");
     if (incl) incl.textContent = (total * 1.21).toFixed(2).replace(".", ",");
+
+    // van-prijs + besparing (vaste actie van SALE_PCT korting)
+    var was = Math.round(total / (1 - SALE_PCT));
+    var save = was - total;
+    var wasEl = document.getElementById("livePriceWas");
+    var saveEl = document.getElementById("livePriceSave");
+    var pctEl = document.getElementById("livePriceSavePct");
+    if (wasEl) wasEl.textContent = was;
+    if (saveEl) saveEl.textContent = save;
+    if (pctEl) pctEl.textContent = Math.round(SALE_PCT * 100);
     return total;
   }
 
