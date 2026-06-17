@@ -22,13 +22,15 @@
   --primary-line: #b9ecd6;   /* rand bij groene tint */
   --accent: #05C275;         /* KSH groen accent */
   --star: #05C275;           /* groene sterren */
-  --sale: #e02b2b;           /* actieprijs / korting (rood accent) */
-  --sale-soft: #fdeaea;      /* zachte rode tint voor de prijs-badge */
+  --sale: #b91c1c;           /* actieprijs / korting (donkerrood) */
+  --sale-soft: #fdeaea;      /* zachte rode tint */
   --radius-sm: 10px;          /* kleine controls: pills, swatches, selects */
   --radius: 12px;             /* standaard */
   --radius-lg: 16px;          /* blokken/kaarten */
   --radius-xl: 20px;          /* grote blokken: gallery, info-box */
   --radius-pill: 9999px;
+  /* Kenmerkende badge-vorm: 3 ronde hoeken + 1 vierkante hoek (rechtsonder) */
+  --shape-tab: var(--radius) var(--radius) 0 var(--radius);
   --card-shadow: 0 1px 2px rgba(16,24,40,.04), 0 4px 16px rgba(16,24,40,.06);
   --font: "Objective", "Helvetica Neue", Arial, "Segoe UI", system-ui, sans-serif;
 
@@ -409,12 +411,12 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 8px;
 }
 .price__row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-/* Prijs in een afgeronde rode badge (pill) — terugkerende vorm op de pagina */
+/* Prijs in donkerrood gevulde badge — kenmerkende vorm: 3 ronde + 1 vierkante hoek */
 .price__badge {
   display: inline-flex; align-items: baseline;
   background: var(--sale); color: #fff;
   font-size: 26px; font-weight: 800; line-height: 1;
-  padding: 9px 18px; border-radius: var(--radius-pill);
+  padding: 9px 18px; border-radius: var(--shape-tab);
 }
 .price__cents { font-size: 16px; font-weight: 800; }
 .price__was {
@@ -446,7 +448,7 @@ button { font-family: inherit; cursor: pointer; }
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--primary-soft); border: 1px solid var(--primary-line);
   color: var(--primary-dark); font-weight: 600; font-size: var(--fs-sm);
-  padding: 6px 14px; border-radius: var(--radius-pill);
+  padding: 6px 14px; border-radius: var(--shape-tab);
 }
 .delivery__dot {
   width: 8px; height: 8px; border-radius: 50%;
@@ -904,7 +906,7 @@ button { font-family: inherit; cursor: pointer; }
   display: inline-flex; align-items: center;
   background: var(--primary); color: #fff;
   font-weight: 700; font-size: var(--fs-base);
-  padding: 12px 22px; border-radius: var(--radius-pill);
+  padding: 12px 22px; border-radius: var(--shape-tab);
   text-decoration: none;
   transition: background .12s ease;
 }
