@@ -24,6 +24,8 @@
   --star: #05C275;           /* groene sterren */
   --sale: #b91c1c;           /* actieprijs / korting (donkerrood) */
   --sale-soft: #fdeaea;      /* zachte rode tint */
+  --cta: #f57c00;            /* primaire koop-CTA (oranje, hoogste opvallendheid) */
+  --cta-dark: #e06c00;       /* hover donkerder oranje */
   --radius-sm: 10px;          /* kleine controls: pills, swatches, selects */
   --radius: 12px;             /* standaard */
   --radius-lg: 16px;          /* blokken/kaarten */
@@ -480,12 +482,12 @@ button { font-family: inherit; cursor: pointer; }
 /* Hoofd-CTA: groen gevuld */
 .btn-cart {
   flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--primary); color: #fff;
+  background: var(--cta); color: #fff;
   border: 0; border-radius: var(--radius-pill);
   padding: 16px 24px; font-size: 15px; font-weight: 700;
   transition: background .12s ease;
 }
-.btn-cart:hover { background: var(--primary-dark); }
+.btn-cart:hover { background: var(--cta-dark); }
 .btn-cart:disabled { background: #e7eae9; color: var(--muted); cursor: not-allowed; }
 /* Basic zwart winkelwagen-icoon (monochroom) */
 .btn-cart__ico {
@@ -508,11 +510,11 @@ button { font-family: inherit; cursor: pointer; }
 .btn-quote {
   flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
   background: #fff; color: var(--navy);
-  border: 1px solid var(--line); border-radius: var(--radius-pill);
-  padding: 13px 24px; font-size: var(--fs-base); font-weight: 700;
-  transition: border-color .12s ease, color .12s ease, background .12s ease;
+  border: 2px solid var(--navy); border-radius: var(--radius-pill);
+  padding: 12px 24px; font-size: var(--fs-base); font-weight: 700;
+  transition: background .12s ease, color .12s ease;
 }
-.btn-quote:hover { border-color: var(--primary); color: var(--primary-dark); background: var(--primary-soft); }
+.btn-quote:hover { background: var(--navy); color: #fff; }
 /* Basic document-icoon (monochroom, volgt tekstkleur) */
 .btn-quote__ico {
   width: 16px; height: 16px; flex: none;
@@ -548,8 +550,8 @@ button { font-family: inherit; cursor: pointer; }
 .lease {
   margin-bottom: 16px; padding: 16px;
   border-radius: 40px 0 40px 40px;
-  background: var(--primary-soft);
-  border: 1px solid var(--primary-line);
+  background: #d4f3e5;
+  border: none;
   color: var(--ink);
 }
 .lease__head {
@@ -1038,7 +1040,7 @@ body.drawer-open { overflow: hidden; }
     box-shadow: 0 -4px 16px rgba(0,0,0,.08);
   }
   .mobile-bar__price { font-size: 22px; font-weight: 700; color: var(--accent); white-space: nowrap; }
-  .mobile-bar__cta { flex: 1; }
+  .mobile-bar__cta { flex: 1; background: var(--cta); }
   /* ruimte zodat de balk niets afdekt */
   body { padding-bottom: 72px; }
   /* PDP stacks to single column */
